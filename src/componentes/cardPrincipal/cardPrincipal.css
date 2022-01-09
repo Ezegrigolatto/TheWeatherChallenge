@@ -1,0 +1,174 @@
+.horas{
+    display:flex
+}
+
+.principal{
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.principalCard{
+    width:60vw;
+    height:100%;
+    background-color:rgba(255, 255, 255, 0.25);
+    border-radius:10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    margin:10px;
+    
+}
+
+.title{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    font-size:1.5rem;
+    color:white;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    width:100%;
+    height:20%;
+    margin: 0;
+    background-color:rgba(0, 0, 0, 0.75);
+    
+}
+.datos{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    text-align:center;
+    height:80%;
+}
+
+.principalIdentificador{
+    height:2.5rem;
+    width:2.5rem;
+}
+
+.der{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    height: 12rem;
+}
+.izq{
+   margin-top: -1.5rem;
+}
+
+.der div{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    width: 10rem;
+}
+
+.der h3 {
+    margin-left: 2rem;
+}
+
+.tempPrincipal{
+    font-size:4rem;
+    margin-bottom: 0;
+}
+.climaPrincipal{
+    font-size:2rem;
+    margin-top: 0;
+
+}
+.iconPrincipal{
+    width:5rem;
+    height:5rem;
+}
+.perHourCard{
+    width:60vw;
+    height:100%;
+    background-color:rgba(255, 255, 255, 0.25);
+    border-radius:10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    padding:10px;
+    margin:10px;
+    display:flex;
+    text-align: center;
+}
+
+.perDayCard {
+    width:60vw;
+    height:100%;
+    background-color:rgba(255, 255, 255, 0.25);
+    border-radius:10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    padding:10px;
+    margin:10px;
+    display:flex;
+    text-align: center;
+    align-items:center;
+}
+.horas{
+    width:100%;
+    display:flex;
+    justify-content:space-evenly;
+}
+.elementos{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.elementos h3{
+    height:2rem;
+}
+.spinner {
+    border: 5px solid rgba(0, 0, 0, 0.3);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: #ffffff;
+    margin: 0 auto;
+    margin-top: 20px;
+    animation: spin 1s ease infinite;
+    position:absolute;
+    top:50%;
+    left:50%;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+      }
+    
+}
+
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 1.2rem;
+    }    
+    .principalCard{
+        width:85vw;
+    }
+    .perHourCard{
+        width:90vw;
+        overflow:scroll;
+    }
+    .perDayCard{
+        width:90vw;
+        overflow:scroll;
+    }
+    .tempPrincipal{
+        font-size:3rem;
+    }
+    .elementos{
+        width:6rem;
+    }
+    
+}
+
+@media screen and (max-width: 550px){
+    .horas{
+        width:auto
+    }
+}
