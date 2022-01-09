@@ -15,7 +15,7 @@ export function getIP() {
 
 export function getWeatherInfo(payload){
     return function (dispatch) {
-        return axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${payload}&units=metric&appid=a816b33fdc5b88024bb62eeed68fa63a`)
+        return axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${payload}&units=metric&appid=a816b33fdc5b88024bb62eeed68fa63a`)
         .then(res => {
             dispatch({
                 type: GET_WEATHER_INFO,
