@@ -4,7 +4,7 @@ import { GET_IP, GET_WEATHER_INFO, ADD_ARR_CITIES, DELETE_CITIES} from "../types
 
 export function getIP() {
     return dispatch => {
-        axios.get("http://ip-api.com/json").then(res => {
+        axios.get("https://ip-api.com/json").then(res => {
             dispatch({
                 type: GET_IP,
                 payload: res.data
