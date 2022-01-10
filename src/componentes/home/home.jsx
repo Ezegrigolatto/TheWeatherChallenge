@@ -35,6 +35,7 @@ export default function Home() {
     setCity("");
   };
 
+  /*eslint-disable */
   useEffect(() => {
     if (cityActual.city) {
       let arr = cantidadCities.map((e) => {
@@ -51,6 +52,7 @@ export default function Home() {
       }
     }
   }, [cityActual]);
+  /*eslint-enable */
 
   return (
     <div className="home">

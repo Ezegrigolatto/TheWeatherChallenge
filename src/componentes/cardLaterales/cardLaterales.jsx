@@ -1,8 +1,6 @@
 import "./cardLaterales.css";
 import { useDispatch, useSelector } from "react-redux";
 import Swal from 'sweetalert2'
-import { useEffect, useState } from "react";
-import {TiDeleteOutline} from "react-icons/ti";
 import { borrarCity, getWeatherInfo } from "../../redux/actions";
 
 export default function Sidecards () {
@@ -49,7 +47,7 @@ export default function Sidecards () {
                 </div>
                 <h1>{e.city.name}</h1> 
                 <h2>{`${Math.round(e.list[0].main.temp)}°C`}</h2>
-                <img src={`http://openweathermap.org/img/wn/${e.list[0].weather[0].icon}@2x.png`}></img>
+                <img alt="icon" src={`http://openweathermap.org/img/wn/${e.list[0].weather[0].icon}@2x.png`}></img>
                 <hr className="hrsidecard"/>
                 </div>
                 )})

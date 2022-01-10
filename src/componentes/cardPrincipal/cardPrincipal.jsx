@@ -27,7 +27,7 @@ export default function Principal() {
   const horas = horaActual.getHours().toString().padStart(2, "0");
   const minutos = horaActual.getMinutes().toString().padStart(2, "0");
 
-
+ /*eslint-disable */
   useEffect(() => {
     setCity(IPCity);
   }, [IPCity]);
@@ -37,6 +37,7 @@ export default function Principal() {
       dispatch(getWeatherInfo(city.city));
     }
   }, [city.city]);
+  /*eslint-enable */
 
   const perHours = () => {
     let porHoras = [];
@@ -49,27 +50,8 @@ export default function Principal() {
           <div key={e.dt_txt} className="elementos">
             <h3>{e.dt_txt.slice(11, 16)}</h3>
             <h1>{Math.round(e.main.temp)}°C</h1>
-            <img
-              src={`http://openweathermap.org/img/wn/${e.weather[0].icon}@2x.png`}
-            ></img>
-          </div>
-        ))}
-      </div>
-    );
-  };
-
-  const perDays = () => {
-    let porDias = [];
-    for (let x = 1; x < info[0].list.length; x = x + 8) {
-      porDias.push(info[0].list[x]);
-    }
-    return (
-      <div className="horas">
-        {porDias.map((e) => (
-          <div className="elementos">
-            <h3>{`${e.dt_txt.slice(8, 10)}-${e.dt_txt.slice(5, 7)}`}</h3>
-            <h1>{Math.round(e.main.temp)}°C</h1>
-            <img
+            <img 
+              alt="icon"
               src={`http://openweathermap.org/img/wn/${e.weather[0].icon}@2x.png`}
             ></img>
           </div>
@@ -173,7 +155,7 @@ export default function Principal() {
             <hr />
             <h3>{Math.round(arr1sort[arr1sort.length - 1].main.temp)}°C</h3>
           </div>
-          <img src={`http://openweathermap.org/img/wn/${arr1sort[Math.round((arr1sort.length-1)/2)].weather[0].icon}@2x.png`}></img>
+          <img alt="icon" src={`http://openweathermap.org/img/wn/${arr1sort[Math.round((arr1sort.length-1)/2)].weather[0].icon}@2x.png`}></img>
         </div>
         <div className="elementos">
           <h3>{`${arr2sort[0].dt_txt.slice(8, 10)}-${arr2sort[0].dt_txt.slice(
@@ -187,7 +169,7 @@ export default function Principal() {
             <hr />
             <h3>{Math.round(arr2sort[arr2sort.length - 1].main.temp)}°C</h3>
           </div>
-          <img src={`http://openweathermap.org/img/wn/${arr2sort[Math.round((arr2sort.length-1)/2)].weather[0].icon}@2x.png`}></img>
+          <img alt="icon" src={`http://openweathermap.org/img/wn/${arr2sort[Math.round((arr2sort.length-1)/2)].weather[0].icon}@2x.png`}></img>
         </div>
         <div className="elementos">
           <h3>{`${arr3sort[0].dt_txt.slice(8, 10)}-${arr3sort[0].dt_txt.slice(
@@ -201,7 +183,7 @@ export default function Principal() {
             <hr />
             <h3>{Math.round(arr3sort[arr3sort.length - 1].main.temp)}°C</h3>
           </div>
-          <img src={`http://openweathermap.org/img/wn/${arr3sort[Math.round((arr3sort.length-1)/2)].weather[0].icon}@2x.png`}></img>
+          <img alt="icon" src={`http://openweathermap.org/img/wn/${arr3sort[Math.round((arr3sort.length-1)/2)].weather[0].icon}@2x.png`}></img>
         </div>
         <div className="elementos">
           <h3>{`${arr4sort[0].dt_txt.slice(8, 10)}-${arr4sort[0].dt_txt.slice(
@@ -215,7 +197,7 @@ export default function Principal() {
             <hr />
             <h3>{Math.round(arr4sort[arr4sort.length - 1].main.temp)}°C</h3>
           </div>
-          <img src={`http://openweathermap.org/img/wn/${arr4sort[Math.round((arr4sort.length-1)/2)].weather[0].icon}@2x.png`}></img>
+          <img alt="icon" src={`http://openweathermap.org/img/wn/${arr4sort[Math.round((arr4sort.length-1)/2)].weather[0].icon}@2x.png`}></img>
         </div>
         <div className="elementos">
           <h3>{`${arr5sort[0].dt_txt.slice(8, 10)}-${arr5sort[0].dt_txt.slice(
@@ -229,7 +211,7 @@ export default function Principal() {
             <hr />
             <h3>{Math.round(arr5sort[arr5sort.length - 1].main.temp)}°C</h3>
           </div>
-          <img src={`http://openweathermap.org/img/wn/${arr5sort[Math.round((arr5sort.length-1)/2)].weather[0].icon}@2x.png`}></img>
+          <img alt="icon" src={`http://openweathermap.org/img/wn/${arr5sort[Math.round((arr5sort.length-1)/2)].weather[0].icon}@2x.png`}></img>
         </div>
       </div>
     );
@@ -237,7 +219,7 @@ export default function Principal() {
 
   return (
     <div className="principal">
-      {info[0] ? (
+      {info[0]?.list[0]?.weather[0]?.icon ? (
         <>
           <div className="principalCard">
             <h2 className="title">{`${info[0].city.name}: ${horas}:${minutos} hs`}</h2>
@@ -247,6 +229,7 @@ export default function Principal() {
                   {Math.round(info[0].list[0].main.temp)}°C
                 </h2>
                 <img
+                  alt="icon"
                   className="iconPrincipal"
                   src={`http://openweathermap.org/img/wn/${info[0].list[0].weather[0].icon}@2x.png`}
                 ></img>
