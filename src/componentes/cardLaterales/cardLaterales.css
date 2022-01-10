@@ -19,7 +19,7 @@
     text-align: center;
 }
 .cardsVerticales h1{
-    font-size: 2vw;
+    font-size: 2rem;
     font-weight: bold;
     margin: 0;
 }
@@ -45,6 +45,23 @@
     display: flex;
     justify-content: flex-end;
 }
+.botonContainer button {
+    z-index: 100;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.486);
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.3rem;
+    color: rgb(0, 0, 0);
+    margin-right: 0.2rem;
+    margin-top:0.1rem;
+    cursor: pointer;
+
+}
+
+.botonContainer path {
+    z-index: -1;
+}
 
 @media screen and (max-width:768px){
 
@@ -53,7 +70,21 @@
         flex-direction:row;
         width: 85vw;
         height: 100%;
-        overflow: auto;
+        overflow: scroll;
     }
+
+    .cardsVerticales h1{
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        height: 3rem;
+        width: 15rem
+    }
+    .cardsVerticales{
+        width: 25rem;
+    }
+    .cardsVerticales h2{
+        margin: 0;
+    }
+
 
 }

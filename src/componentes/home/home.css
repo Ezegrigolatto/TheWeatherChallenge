@@ -10,10 +10,15 @@
 
 .searchbarContainer{
     display:flex;
-    justify-content:center;
+    justify-content:space-between;
     align-items:center;
     margin-top:10px;
     margin-bottom:10px;
+    border-radius:20px;
+    background-color:rgba(221, 221, 221, 0.651);
+    width:25rem;
+    position:relative;
+    left:calc(50% - 12rem);
 }
 
 .searchbarContainer button {
@@ -30,11 +35,9 @@
     border:none;
     outline:none;
     padding-left:15px;
-    border-radius:20px;
-    background-color:rgba(221, 221, 221, 0.651);
-    width:20rem;
     height:2.5rem;
     font-size: medium;
+    background-color:transparent;
 }
 
 .searchbar::placeholder{
@@ -43,12 +46,12 @@
 
 
 body{
-    /* background-color: #0aaae9; */
+
     background-image : url("https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80");
     font-family: "Josefin Sans";
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 @media screen and (max-width: 768px) {
@@ -59,5 +62,11 @@ background-size: cover;
             align-items:center;
             margin-top:10px;
             margin-bottom:10px;
+        }
+
+        .searchbarContainer{
+            width:18rem;
+            position:relative;
+            left:calc(50% - 9rem);
         }
 }

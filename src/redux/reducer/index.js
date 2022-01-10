@@ -19,6 +19,7 @@ export default function rootReducer(state = initialState, action) {
                     IPCity: action.payload,
                 };
             case ADD_ARR_CITIES:
+                console.log(action.payload)
                 return {
                     ...state,
                     arrCities: [action.payload, ...state.arrCities],

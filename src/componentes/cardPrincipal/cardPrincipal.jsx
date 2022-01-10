@@ -20,10 +20,13 @@ export default function Principal() {
     fecha.getUTCMinutes()
   );
   const horaActual = new Date(
-    fechaUTC.getTime() + weatherInfo.city?.timezone * 1000
+    fechaUTC.getTime() +  info[0]?.city.timezone * 1000
   );
+
+
   const horas = horaActual.getHours().toString().padStart(2, "0");
   const minutos = horaActual.getMinutes().toString().padStart(2, "0");
+
 
   useEffect(() => {
     setCity(IPCity);
@@ -43,7 +46,7 @@ export default function Principal() {
     return (
       <div className="horas">
         {porHoras.map((e) => (
-          <div className="elementos">
+          <div key={e.dt_txt} className="elementos">
             <h3>{e.dt_txt.slice(11, 16)}</h3>
             <h1>{Math.round(e.main.temp)}°C</h1>
             <img
@@ -159,7 +162,6 @@ export default function Principal() {
       }
       return 0;
     });
-    console.log(arr1sort);
     return (
       <div className="horas">
         <div className="elementos">
@@ -238,7 +240,7 @@ export default function Principal() {
       {info[0] ? (
         <>
           <div className="principalCard">
-            <h2 className="title">{`El clima en ${info[0].city.name} a las ${horas}:${minutos}`}</h2>
+            <h2 className="title">{`${info[0].city.name}: ${horas}:${minutos} hs`}</h2>
             <div className="datos">
               <div className="izq">
                 <h2 className="tempPrincipal">
@@ -265,15 +267,15 @@ export default function Principal() {
               </div>
             </div>
           </div>
-          <h1>Pronóstico por hora</h1>
+          <h1 className="titles">Pronóstico por hora</h1>
           <div className="perHourCard">
             {info[0] ? perHours() : <p></p>}</div>
 
-          <h1>Pronóstico por día</h1>
+          <h1 className="titles">Pronóstico por día</h1>
           <div className="perDayCard">{info[0] ? prueba() : <p></p>}</div>
         </>
       ) : (
-        <div class="spinner"></div>
+        <div className="spinner"></div>
       )}
     </div>
   );

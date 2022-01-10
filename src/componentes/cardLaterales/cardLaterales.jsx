@@ -13,6 +13,7 @@ export default function Sidecards () {
 
     const handleDelete = (e) => {
         if (arrCities.length > 1) {
+            console.log(e.target)
         dispatch(borrarCity(e.target.id))
         }else{
             Swal.fire({
@@ -41,9 +42,10 @@ export default function Sidecards () {
         <div className="sidecards">
             {
            arrCities.map((e)=>{return(
-            <div className="cardsVerticales">
-                <div className="botonContainer">
-                <TiDeleteOutline className="deleteIcon" id={e.city.name} onClick={handleDelete}/>
+            <div key={e.city.name} className="cardsVerticales">
+                {console.log(e.city.name)}
+                <div className="botonContainer" >
+                <button id={e.city.name} onClick={handleDelete}>x</button>
                 </div>
                 <h1>{e.city.name}</h1> 
                 <h2>{`${Math.round(e.list[0].main.temp)}°C`}</h2>
