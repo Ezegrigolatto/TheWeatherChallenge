@@ -2,7 +2,7 @@
 
 Este proyecto ha sido desarrollado como un challenge solicitado por una empresa para medir conocimientos en el Front-end.
 
-En la aplicación podremos realizar búsquedas de ciudades y se nos devolverá información del clima de dicha ciudad, para hoy, para las próximas horas y para los próximos 5 dias.
+En la aplicación podremos realizar búsquedas de ciudades y se nos devolverá información del clima de dicha ciudad para hoy, para las próximas horas y para los próximos 5 dias.
 
 ## Funcionalidades
 
