@@ -7,8 +7,9 @@ En la aplicación podremos realizar búsquedas de ciudades y se nos devolverá i
 De momento las ApiKeys estan públicas para que puedan descargarlo y probarlo inmediatamente.
 
 Se utilizó react (componentes funcionales y hooks), redux, redux thunk, mocha, should.js, 
-SweetAlert, React-Icons, entre otras dependencias; así como la api de OpenWeather e IPAPI.
+SweetAlert, React-Icons, entre otras dependencias; así como las apis de OpenWeather e IP API.
 
+Para probarlo debes clonar el repositorio, abrirlo con tu editor de codigo, ejecutar npm install y luego iniciarlo con npm start.
 
 ## Funcionalidades
 
