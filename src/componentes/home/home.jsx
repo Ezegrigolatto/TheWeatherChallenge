@@ -13,10 +13,13 @@ export default function Home() {
   const cantidadCities = useSelector((state) => state.arrCities);
   const cityActual = useSelector((state) => state.allInfo);
 
+  //al cargar la pagina, hacemos un get a la IP-API para obtener la ciudad actual
   useEffect(() => {
     dispatch(getIP());
   }, [dispatch]);
 
+  //funcion que se ejecuta al hacer click en el boton de buscar, 
+  //se obtiene la ciudad del estado local y se hace un get a la API de OpenWeather
   const buscarCiudad = (e) => {
     e.preventDefault();
     if (cantidadCities.length < 5) {
@@ -34,6 +37,9 @@ export default function Home() {
     }
     setCity("");
   };
+
+
+// accion de agregar ciudad a la lista de ciudades consultadas
 
   /*eslint-disable */
   useEffect(() => {

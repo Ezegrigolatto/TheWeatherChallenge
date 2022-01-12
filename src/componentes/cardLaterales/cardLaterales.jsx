@@ -9,9 +9,12 @@ export default function Sidecards () {
     const IPCity = useSelector((state) => state.IPCity);
     const dispatch = useDispatch()
 
+
+    //función que se ejecuta al hacer click en el boton de borrar, esta controlada para 
+    //que no se puedan borrar todas las ciudades y que tenga un maximo de 5 a la vez.
     const handleDelete = (e) => {
         if (arrCities.length > 1) {
-            console.log(e.target)
+           
         dispatch(borrarCity(e.target.id))
         }else{
             Swal.fire({
@@ -33,7 +36,6 @@ export default function Sidecards () {
                 }
               })
         }
-
     }
 
     return (
@@ -41,7 +43,6 @@ export default function Sidecards () {
             {
            arrCities.map((e)=>{return(
             <div key={e.city.name} className="cardsVerticales">
-                {console.log(e.city.name)}
                 <div className="botonContainer" >
                 <button id={e.city.name} onClick={handleDelete}>x</button>
                 </div>

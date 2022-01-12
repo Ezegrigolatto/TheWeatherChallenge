@@ -11,6 +11,7 @@ export default function Principal() {
   const dispatch = useDispatch();
   const [city, setCity] = useState("");
 
+  //calculamos la hora para cada ciudad que busquemos
   const fecha = new Date();
   const fechaUTC = new Date(
     fecha.getUTCFullYear(),
@@ -22,11 +23,13 @@ export default function Principal() {
   const horaActual = new Date(
     fechaUTC.getTime() +  info[0]?.city.timezone * 1000
   );
-
-
+  
   const horas = horaActual.getHours().toString().padStart(2, "0");
   const minutos = horaActual.getMinutes().toString().padStart(2, "0");
+  
+  /////////////////////////////////////////////////////////////////////////
 
+  //seteamos la ciudad capturada por IP como card principal
  /*eslint-disable */
   useEffect(() => {
     setCity(IPCity);
@@ -39,6 +42,7 @@ export default function Principal() {
   }, [city.city]);
   /*eslint-enable */
 
+  //funcion para mostrar las 5 instancias del clima por hora
   const perHours = () => {
     let porHoras = [];
     for (let x = 0; x < 5; x++) {
@@ -60,7 +64,16 @@ export default function Principal() {
     );
   };
 
-  const prueba = () => {
+
+  //funcion para mostrar las 5 instancias del clima por dia.
+  //sabemos que la api trae informacion cada 3 horas, y sabemos que el dia dura 24 horas, 
+  //entonces 24/3 = 8, 
+  //tambien sabemos que la api devuelve un array con 40 posiciones, una cada 3 horas por 5 dias.
+  //es por eso que hacemos un for y en cada parametro de igualdad vamos saltando de 8 en 8.
+  //recorremos todo el array, pusheamos en uno de los 5 arrays creados (uno por dia) y luego
+  //le hacemos un sort, esto es para capturar la temperatura maxima y minima de cada dia.
+  //finalmente devolvemos el elemento jsx que queremos mostrar en el componente.
+  const perDays = () => {
     let arr1 = [];
     let arr2 = [];
     let arr3 = [];
@@ -255,7 +268,7 @@ export default function Principal() {
             {info[0] ? perHours() : <p></p>}</div>
 
           <h1 className="titles">Pronóstico por día</h1>
-          <div className="perDayCard">{info[0] ? prueba() : <p></p>}</div>
+          <div className="perDayCard">{info[0] ? perDays() : <p></p>}</div>
         </>
       ) : (
         <div className="spinner"></div>

@@ -69,7 +69,6 @@ describe("Respuestas de las APIS", () => {
         return request(`http://api.ipapi.com/`)
             .get("/api/check?access_key=23e52ad54fa335ec22b83aa298a5cc01")
             .then(res => {
-                console.log(res.body)
                 res.body.should.have.property("city").and.be.a.String().and.not.empty();
             })
     })
