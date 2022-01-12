@@ -11,6 +11,8 @@ SweetAlert, React-Icons, entre otras dependencias; así como las apis de OpenWea
 
 Para probarlo debes clonar el repositorio, abrirlo con tu editor de codigo, ejecutar npm install y luego iniciarlo con npm start.
 
+Para ejecutar los tests, desde el directorio raiz del proyecto, ejecutar npm test.
+
 ## Funcionalidades
 
 - Búsqueda de información automática al cargar la página por primera vez y/o al quedar vacía la lista de ciudades consultadas.
